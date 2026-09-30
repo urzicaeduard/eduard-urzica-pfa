@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Eduard Urzică · Portofoliu</title>
+<meta name="description" content="Reclame Meta și pagini de site scrise pentru GeneX Com, Niro Stahl, The Rice Dealer și Idealist Shop, cu textul exact publicat, cifrele campaniilor și certificările Google și Anthropic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: o coloană editorială de 1040px pe hârtie caldă, reclamele în grilă de două coloane, diplomele pe toată lățimea. */
+  :root{
+    --paper:#fbfaf7;
+    --card:#ffffff;
+    --ink:#1c1a17;
+    --ink-2:#57524a;
+    --ink-3:#8b8579;
+    --line:rgba(28,26,23,.11);
+    --line-strong:rgba(28,26,23,.22);
+    --accent:#7a2530;
+    --accent-soft:#f7eeee;
+    --shadow:0 1px 2px rgba(28,26,23,.05),0 12px 32px rgba(28,26,23,.06);
+    --display:'Newsreader',Georgia,'Times New Roman',serif;
+    --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+    --mono:'IBM Plex Mono',Menlo,Consolas,monospace;
+    color-scheme:light only;
+  }
+  /* Temă unică, albă. Nu există variantă dark, indiferent de setarea sistemului. */
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    padding-inline:20px;
+    position:relative;
+  }
+  /* textură de hârtie: zgomot fin + o lumină caldă discretă sus */
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:-1;
+    background:
+      radial-gradient(1200px 600px at 50% -200px, rgba(122,37,48,.06), transparent 70%),
+      var(--paper);
+  }
+  body::after{
+    content:"";
+    position:fixed;inset:0;z-index:-1;
+    pointer-events:none;
+    opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:var(--accent)}
+  .wrap{max-width:1040px;margin:0 auto}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:block;
+    margin-bottom:12px;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0}
+  h2{font-size:clamp(30px,4vw,40px);line-height:1.1;letter-spacing:-.01em}
+  h3{font-size:24px;line-height:1.2}
+  p{margin:0}
+  .lede{font-size:19px;color:var(--ink-2);max-width:62ch}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding-block:72px 56px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:40px;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .avatar-ring{
+    width:232px;height:232px;border-radius:50%;
+    padding:6px;
+    background:var(--card);
+    border:1px solid var(--line-strong);
+    box-shadow:var(--shadow);
+    flex-shrink:0;
+  }
+  .avatar-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+  .hero h1{font-size:clamp(40px,6vw,64px);line-height:1;letter-spacing:-.015em;margin-bottom:8px}
+  .hero .role{font-size:20px;color:var(--ink-2);margin-bottom:18px}
+  .firm{
+    display:inline-flex;flex-wrap:wrap;gap:0 14px;
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;
+    color:var(--ink);
+    background:var(--card);
+    border:1px solid var(--line-strong);
+    border-radius:8px;
+    padding:10px 14px;
+    margin-bottom:22px;
+  }
+  .firm span+span::before{content:"·";margin-right:14px;color:var(--ink-3)}
+  .hero .lede{margin-bottom:22px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    padding:6px 12px;border:1px solid var(--line-strong);border-radius:100px;color:var(--ink-2);background:var(--card);
+  }
+
+  /* ---------- NUMBERS ---------- */
+  .numbers{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-bottom:1px solid var(--line);
+  }
+  .num{padding:28px 24px 28px 0;border-right:1px solid var(--line)}
+  .num:last-child{border-right:0}
+  .num+.num{padding-left:24px}
+  .num b{
+    display:block;font-family:var(--display);font-weight:500;
+    font-size:40px;line-height:1;color:var(--ink);
+    font-variant-numeric:tabular-nums;margin-bottom:8px;
+  }
+  .num span{font-size:14px;color:var(--ink-2);line-height:1.4;display:block}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding-block:64px;border-bottom:1px solid var(--line)}
+  .sec-head{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:36px;max-width:72ch}
+  .sec-head .client{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  }
+  .site-tag{
+    font-size:11px;letter-spacing:.06em;text-transform:none;
+    color:var(--accent);background:var(--accent-soft);
+    padding:3px 10px;border-radius:100px;
+  }
+  .sec-head p{color:var(--ink-2);font-size:17px}
+
+  .sub-head{margin:48px 0 20px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .sub-head h3{font-size:26px}
+  .sub-head small{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.04em}
+  .sub-head+p.note{color:var(--ink-2);max-width:70ch;margin:-8px 0 22px}
+
+  /* ---------- AD CARDS (format Facebook) ---------- */
+  .ads{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .ad{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    min-width:0;
+  }
+  .ad .head{display:flex;align-items:center;gap:12px;padding:14px 18px 10px}
+  .ad .logo{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--ink);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-weight:600;font-size:18px;flex-shrink:0;
+  }
+  .ad .who b{display:block;font-size:15px;line-height:1.2}
+  .ad .who span{font-size:12.5px;color:var(--ink-3)}
+  .ad .date{
+    margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);white-space:nowrap;
+  }
+  .ad .body{padding:4px 18px 14px;font-size:15.5px;line-height:1.5;white-space:pre-line;color:var(--ink)}
+  .ad .pic{width:100%;aspect-ratio:4/3;object-fit:cover;background:#f1efea;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .ad .pic.tall{aspect-ratio:4/5}
+  .ad .pic.wide{aspect-ratio:16/9}
+  .ad .foot{
+    margin-top:auto;
+    padding:12px 18px;background:#f5f4f0;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .ad .foot .txt{min-width:0}
+  .ad .foot .site{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:2px}
+  .ad .foot .headline{font-weight:600;font-size:15px;line-height:1.3}
+  .ad .foot .desc{font-size:13px;color:var(--ink-2);margin-top:2px}
+  .ad .foot .btn{
+    font-family:var(--body);font-size:13.5px;font-weight:600;
+    background:#e8e6e0;color:var(--ink);border:none;padding:9px 14px;border-radius:7px;flex-shrink:0;
+  }
+  .ad.text-only .body{padding-top:14px}
+
+  /* text samples (pagini de site, poziționare) */
+  .samples{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .sample{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;min-width:0;
+  }
+  .sample .label{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px;
+  }
+  .sample p{font-family:var(--display);font-size:22px;line-height:1.3}
+  .sample p.small{font-family:var(--body);font-size:16px;color:var(--ink-2);line-height:1.55}
+  .sample p+p{margin-top:10px}
+
+  .angles{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .angle{font-size:14px;background:var(--card);border:1px solid var(--line);color:var(--ink-2);padding:7px 12px;border-radius:8px}
+
+  .stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:36px;padding-top:24px;border-top:1px dashed var(--line-strong)}
+  .stat b{display:block;font-family:var(--display);font-size:32px;font-weight:500;line-height:1;font-variant-numeric:tabular-nums;margin-bottom:6px}
+  .stat span{font-size:14px;color:var(--ink-2)}
+
+  /* ---------- CERTIFICĂRI ---------- */
+  .certs-google{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:8px}
+  .cert{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    padding:26px 20px 22px;text-align:center;min-width:0;
+  }
+  .cert img{width:100%;max-width:210px;margin:0 auto 16px}
+  .cert .cname{font-family:var(--display);font-size:22px;line-height:1.15;display:block;margin-bottom:8px}
+  .cert .meta{font-size:13.5px;color:var(--ink-2);line-height:1.5;display:block}
+  .cert .meta code{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+  .certs-anthropic{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:28px}
+  .diploma{min-width:0}
+  .diploma img{width:100%;border:1px solid var(--line-strong);border-radius:8px;box-shadow:var(--shadow);background:#fff}
+  .diploma .cap{margin-top:12px;display:grid;gap:4px}
+  .diploma .cap b{font-family:var(--display);font-size:20px;font-weight:500}
+  .diploma .cap span{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding-block:64px 88px}
+  footer h2{margin-bottom:14px}
+  footer .lede{margin-bottom:28px}
+  .contact{
+    display:inline-grid;gap:6px;
+    font-family:var(--mono);font-size:15px;
+    background:var(--card);border:1px solid var(--line-strong);border-radius:10px;padding:16px 20px;
+  }
+  .contact b{font-family:var(--display);font-size:22px;font-weight:500;letter-spacing:0}
+  .contact span{color:var(--ink-2)}
+  .contact span strong{color:var(--ink);font-weight:600}
+
+  @media (max-width:820px){
+    .numbers{grid-template-columns:repeat(2,1fr)}
+    .num{padding:20px 16px 20px 0}
+    .num:nth-child(2){border-right:0}
+    .num:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .num+.num{padding-left:16px}
+    .num:nth-child(3){padding-left:0}
+    .certs-google{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:700px){
+    header.hero{grid-template-columns:1fr;gap:26px;padding-block:44px 40px}
+    .avatar-ring{width:180px;height:180px}
+    .ads,.samples,.certs-anthropic{grid-template-columns:1fr}
+    section{padding-block:48px}
+  }
+  @media (max-width:420px){
+    .certs-google{grid-template-columns:1fr}
+    .numbers{grid-template-columns:1fr}
+    .num,.num+.num{padding:18px 0;border-right:0;border-bottom:1px solid var(--line)}
+    .num:last-child{border-bottom:0}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="avatar-ring"><img src="img/profil.jpg" alt="Eduard Urzică" width="900" height="900"></div>
+    <div>
+      <span class="eyebrow">Copywriter · reclame Meta și pagini de site</span>
+      <h1>Eduard Urzică</h1>
+      <p class="role">Scriu reclamele și paginile pe care ajung oamenii din ele.</p>
+      <div class="firm"><span>Urzică Eduard PFA</span><span>CUI 53983211</span><span>0749 675 066</span></div>
+      <p class="lede">Facebook, Instagram, TikTok și Google. Mai jos sunt reclamele exact așa cum au fost publicate în conturile clienților, cu imaginile lor și cu cifrele campaniilor, nu descrieri despre ce aș putea scrie.</p>
+      <div class="tags">
+        <span class="tag">Meta Ads</span>
+        <span class="tag">Google Ads</span>
+        <span class="tag">Copy B2B și B2C</span>
+        <span class="tag">Pagini de site</span>
+        <span class="tag">Programe de afiliere</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="numbers">
+    <div class="num"><b>216</b><span>cereri de contact generate din reclamă pentru GeneX Com, iunie–august 2026</span></div>
+    <div class="num"><b>263.111</b><span>afișări ale reclamelor GeneX în aceeași campanie</span></div>
+    <div class="num"><b>10.466</b><span>afișări de pagină pe site-ul Niro Stahl, iunie–august 2026</span></div>
+    <div class="num"><b>12</b><span>reclame publicate pentru Niro Stahl și GeneX, cu textul integral mai jos</span></div>
+  </div>
+
+  <!-- ================= GENEX ================= -->
+  <section id="genex">
+    <div class="sec-head">
+      <div class="client">GeneX Com · Sărmaș, Harghita (cifră de afaceri 37,5 M RON, conform paginii /overview) <span class="site-tag">site realizat de mine</span></div>
+      <h2>Peleți ENplus A1 pe o piață plină de saci fără etichetă</h2>
+      <p>Producător de peleți, cherestea și lemn de foc, cu fabrică din 1995. Piața de peleți e plină de saci fără etichetă, unde omul nu știe ce arde în centrală. Fiecare reclamă pornește de la neîncrederea asta și pune în față certificatul cu număr, nu prețul. Cele patru reclame de mai jos au rulat în contul Meta al clientului între iunie și august 2026, cu textul și imaginile de aici.</p>
+    </div>
+
+    <div class="ads">
+      <article class="ad">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat</span></div><span class="date">18 iun. 2026</span></div>
+        <div class="body">Dacă centrala pe peleți se înfundă des sau se umple repede de cenușă, problema poate fi și de la peleții folosiți.
+
+Peleții GENEX sunt fabricați din rumeguș de rășinoase, fără adaosuri chimice sau lianți sintetici, cu umiditate sub 10%.
+
+Certificați ENplus A1 și ambalați în saci de 15 kg, cu eticheta la vedere.
+
+Intră pe site, spune-ne localitatea și cantitatea, iar echipa îți trimite oferta.</div>
+        <img class="pic" src="img/genex_r1_centrala.jpg" alt="Sac de peleți GENEX în fața paleților înfoliați, imaginea reclamei">
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro</span><div class="headline">Peleți GENEX pentru centrale</div></div><button class="btn" type="button">Află mai multe</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat</span></div><span class="date">18 iun. 2026</span></div>
+        <div class="body">Peleții fără etichetă clară pot însemna surprize după primele folosiri: ardere mai puțin constantă, mai multă cenușă și curățări mai dese.
+
+Peleții GENEX sunt ENplus A1, produși în Sărmaș, din rumeguș de rășinoase, fără adaosuri chimice sau lianți sintetici.
+
+Vin ambalați în saci de 15 kg, cu etichetă ENplus și certificat HFA-ENplus-0341 / ID RO 014.
+
+Spune-ne localitatea și cantitatea, iar echipa îți trimite oferta.</div>
+        <img class="pic tall" src="img/genex_r2_eticheta.jpg" alt="Sac GENEX Premium Wood Pellets cu sigiliul ENplus A1, imaginea reclamei">
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro</span><div class="headline">Peleți ENplus A1 din rășinoase</div></div><button class="btn" type="button">Află mai multe</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat</span></div><span class="date">31 iul. 2026</span></div>
+        <div class="body">Peleții de iarnă se cumpără în august, nu în noiembrie.
+În august alegi. În noiembrie cumperi ce a rămas.
+
+Vara: preț mai bun, stoc garantat și magazia plină înainte de primul frig.
+Toamna: preț de sezon și „reveniți săptămâna viitoare".
+
+La GENEX producem peleți din rumeguș de rășinoase, certificați ENplus® A1, în Sărmaș, Harghita:
+✔ Certificare ENplus® A1
+✔ Umiditate sub 10% — ardere constantă, centrală mai curată
+✔ Saci de 15 kg, pentru centrale și sobe pe peleți
+
+📍 Cantități mici: livrăm pe o rază de ~100 km de Sărmaș.
+🚛 Comenzi de camion: ofertă personalizată după cantitate, destinație și disponibilitate.
+
+Prinde prețul de vară → trimite-ne localitatea și cantitatea, îți răspundem cu oferta.</div>
+        <img class="pic" src="img/genex_r3_vara.jpg" alt="Peleți în palmă, imaginea reclamei de vară">
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro</span><div class="headline">Peleți ENplus A1 la preț de vară</div></div><button class="btn" type="button">Află mai multe</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat</span></div><span class="date">17 aug. 2026</span></div>
+        <div class="body">Peleții GENEX ies pe banda din fabrica noastră de la Sărmaș și ajung direct la tine. Între ei și centrala ta nu mai stă niciun intermediar.
+
+Lucrăm lemnul în Harghita din 1995. Peleții îi facem din rumeguș de rășinoase, fără adaosuri chimice și fără lianți sintetici, cu umiditate sub 10%, în saci de 15 kg.
+
+Certificarea ENplus A1 o avem cu număr: HFA-ENplus-0341, ID RO 014, emisă de Holzforschung Austria. E publică, o poți verifica singur.
+
+Scrie-ne câți saci îți trebuie și pentru ce localitate, ca să știm ce putem duce acolo. Butonul de WhatsApp e pe pagină, dacă vrei răspuns pe loc.</div>
+        <img class="pic" src="img/genex_r4_fabrica.jpg" alt="Banda de ambalare din fabrica GENEX, imaginea reclamei">
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro</span><div class="headline">Peleți făcuți de noi, la Sărmaș</div><div class="desc">ENplus A1 · ID RO 014 · saci de 15 kg</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>216</b><span>cereri de contact din reclamă, iun.–aug. 2026</span></div>
+      <div class="stat"><b>263.111</b><span>afișări, aceeași campanie</span></div>
+      <div class="stat"><b>6.890</b><span>afișări de pagină pe site, iun.–aug. 2026</span></div>
+    </div>
+
+    <div class="sub-head"><h3>Cherestea pentru construcții, unghi B2B</h3><small>patru reclame scrise pentru cherestea, grinzi și dulapi</small></div>
+    <p class="note">Alt cumpărător: constructorul, nu proprietarul de centrală. El nu se teme de calitate slabă în abstract, se teme să primească un lot netriat la preț de depozit. Certificarea C24 stă în față, prețul nu.</p>
+    <div class="ads">
+      <article class="ad">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat</span></div></div>
+        <div class="body">Constructor? Cumperi cherestea de la depozit sau direct de la fabrică?
+
+Diferența se vede în două locuri: în preț și în sortare.
+
+La GENEX COM tai direct de la sursă:
+📐 Dimensiuni la comandă: grosime 20–80 mm · lățime 50–250 mm · lungimi 2–5 m
+🪵 Clasă de calitate A sau B — sau exact la specificațiile tale (STAS 942-86)
+✂️ Rindeluită (gata de montaj) sau nerindeluită (pentru structură)
+✅ Certificat C24 (SR EN 14081) + FSC — lemn sortat după rezistență, cu acte
+🚛 Livrare în toată România și UE, cu flotă proprie
+
+Din 1995 facem un singur lucru: prelucrăm lemn. 30 de ani mai târziu, depozitele cumpără de la noi.
+
+Trimite dimensiunile și cantitatea → primești ofertă fermă în 24h.</div>
+        <img class="pic" src="img/genex_cherestea.jpg" alt="Stivă de cherestea ambalată în depozitul GENEX">
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Cherestea direct de la fabrică. Din 1995.</div><div class="desc">Ofertă în 24h. Certificat C24 + FSC.</div></div><button class="btn" type="button">Trimite solicitarea</button></div>
+      </article>
+
+      <article class="ad text-only">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat</span></div></div>
+        <div class="body">Dezvoltator sau depozit de materiale? Îți ținem șantierul aprovizionat.
+
+Costurile de construcție au crescut cu 9% într-un an. Ultimul lucru de care ai nevoie e un furnizor de lemn care schimbă prețul și termenul din mers.
+
+Ce oferim ferm:
+📦 Cantități de camion, constant, tot anul — clasă A/B sau pe specificațiile tale
+📐 Orice dimensiune din gama 20–80 × 50–250 mm, lungimi 2–5 m
+📅 Termene de livrare respectate — flotă proprie, România și UE
+💰 Preț stabil pe comandă, direct de la producător
+📄 Certificări FSC + C24 (SR EN 14081), factură, documentație completă de export
+
+GENEX COM, Harghita. Fabrică proprie din 1995.
+
+Spune-ne volumul lunar → construim oferta pe nevoile tale.</div>
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Furnizor de cherestea pentru șantiere și depozite</div><div class="desc">Preț stabil. Cantități de camion. Din 1995.</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad text-only">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat</span></div></div>
+        <div class="body">Grinda care ține acoperișul nu se alege după preț.
+
+C24 nu e un cod de marketing. E certificatul care spune că lemnul a fost sortat după rezistență — testat, nu „văzut cu ochiul" la depozit.
+
+De ce contează pe șantierul tău:
+▪️ Grindă C24 = rezistență garantată la încovoiere, nu noroc
+▪️ Uscare controlată = nu crapă și nu se torsionează după montaj
+▪️ Sortare la standard = fiecare bucată din lot e la fel
+
+Noi avem certificarea C24 pe producția proprie — certificat 1870-CPR-1634, emis de un organism notificat UE, public pe site-ul nostru. Cere-o oricui îți vinde lemn de construcție. Dacă nu o are, acum știi de ce e „mai ieftin".
+
+GENEX COM — fabrică din 1995, Harghita. Trimite lista de materiale → ofertă în 24h.</div>
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Lemn de construcție certificat C24, de la producător</div><div class="desc">Sortat după rezistență. Nu după ochi.</div></div><button class="btn" type="button">Află mai multe</button></div>
+      </article>
+
+      <article class="ad text-only">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat · grinzi și dulapi</span></div></div>
+        <div class="body">Acoperișul stă pe grinzi. Grinzile stau pe decizia ta de azi.
+
+O șarpantă se face o dată la 50 de ani. Dacă grinda e strâmbă, udă sau sortată „după ochi", afli peste 2 ierni — când e cel mai scump să afli.
+
+Grinzi și dulapi de la GENEX COM:
+📐 Grosime 80–200 mm · lungimi 2 / 3 / 4 / 5 / 6 m — tăiate la proiectul tău
+✅ Certificat C24 (SR EN 14081) — lemn sortat după rezistență, testat
+🌲 Rășinoase din Harghita — stabile în timp, fără risc de deformare sau crăpare
+✂️ Rindeluite (montaj direct) sau nerindeluite (structură brută)
+🚛 Livrare direct la șantier, cu flotă proprie
+
+Fabrică din 1995. Trimite lista de la meșter → ofertă fermă în 24h.</div>
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Grinzi C24 la dimensiunile tale, de la fabrică</div><div class="desc">Tăiate la comandă. Livrate la șantier.</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+    </div>
+
+    <div class="sub-head"><h3>Lemn de foc și lambriu</h3><small>reclame scrise pentru campaniile de pre-sezon</small></div>
+    <p class="note">La lemnul de foc, unghiul e momentul: se cumpără în iulie, nu în octombrie. La lambriu, cumpără proprietarii de pensiuni și cabane, iar frica lor reală e lemnul care crapă după prima iarnă.</p>
+    <div class="ads">
+      <article class="ad text-only">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat · lemn de foc</span></div></div>
+        <div class="body">Lemnul de foc se cumpără în iulie, nu în octombrie.
+
+Sună ciudat când afară e 30 de grade. Dar uite matematica:
+
+☀️ ÎN IULIE: preț de vară, stoc plin, livrare în câteva zile, lemnul are 3 luni să se usuce în curtea ta.
+
+🥶 ÎN OCTOMBRIE: toată lumea sună în același timp, prețul crește, aștepți la coadă, și arzi lemn care încă „sfârâie".
+
+Lemn de foc de fag de la GENEX COM, Harghita:
+🪵 Tăiat la 25–50 cm, paletizat — gata de stivuit
+📦 Palet cu volum fix: 1,2 mc (1,2 × 0,8 × 1,8 m) — vezi exact ce plătești, cu factură
+🚚 Livrare la poartă, de la un palet în sus — preț mai bun la volum
+
+Firmă din 1995. Nu camion din parcare.
+
+Rezervă-ți lemnele de iarnă la preț de vară → cere oferta.</div>
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Lemne de iarnă la preț de vară</div><div class="desc">Fag, paletizat, cu factură. Livrare organizată.</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad text-only">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat · lemn de foc</span></div></div>
+        <div class="body">Un metru cub înseamnă un metru cub. Aici nu se negociază.
+
+Toți am auzit povestea: comanzi 10 metri, vine camionul, descarcă grămada... și parcă-s 7. Dar cine să mai măsoare o grămadă?
+
+De asta noi livrăm PALETIZAT:
+📦 Palet cu dimensiune fixă: 1,2 × 0,8 × 1,8 m = 1,2 mc. Se măsoară singur.
+🧾 Factură cu cantitatea trecută negru pe alb
+🪵 Fag tăiat la 25–50 cm — jar bogat, ardere lungă, căldură constantă
+🏭 De la o fabrică cu 30 de ani de activitate, nu de la un număr de telefon care mâine nu mai răspunde
+
+GENEX COM, Harghita. Din 1995.
+
+Compară și tu: cere oferta cu tot cu transport → răspundem în 24h.</div>
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Lemn de foc paletizat. Cantitatea corectă, cu factură.</div><div class="desc">Fag crăpat, gata de ars. Firmă din 1995.</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad text-only">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat · lambriu</span></div></div>
+        <div class="body">Camera care primește cele mai multe rezervări pe Booking are pereții din lemn.
+
+Nu e întâmplare. Lemnul face camera caldă în poze și liniștită în realitate. Oaspeții simt asta în 3 secunde de scroll.
+
+Lambriul ăla vine de undeva — și de cele mai multe ori, vine dintr-o fabrică din Harghita. A noastră.
+
+🌲 Lambriu din lemn rășinos, 18 mm — pentru pereți, tavan, fațade sau terase
+📐 Canturi teșite, profil elegant — lungimi de 2 / 3 / 4 m
+🏭 Direct de la producător, din 1995 — echipamente de ultimă generație, preț de fabrică
+🚛 Livrare la lucrare, oriunde în țară
+
+Renovezi o cameră sau o pensiune întreagă? Trimite suprafețele → ofertă în 24h.</div>
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Lambriul din pensiunile care arată bine</div><div class="desc">Molid uscat corect, direct de la fabrică.</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad text-only">
+        <div class="head"><div class="logo">G</div><div class="who"><b>Genex Com</b><span>Sponsorizat · lambriu</span></div></div>
+        <div class="body">Lambriu ieftin montat azi = pereți crăpați la anul.
+
+Diferența nu se vede la cumpărare. Se vede după prima iarnă cu focul pornit: rosturi deschise, scânduri torsionate, meșterul chemat înapoi.
+
+Cauza e aproape mereu aceeași: lemn prelucrat „după ureche", nu la standard.
+
+La GENEX, lambriul iese din fabrică, nu din improvizație:
+✅ Prelucrat pe echipamente de ultimă generație, după standarde europene
+✅ Grosime uniformă 18 mm — fiecare lamelă la fel, rosturi închise
+✅ Canturi teșite, profil curat — montaj ușor pentru orice meșter
+✅ FSC, producție proprie din 1995 — pentru interior ȘI exterior
+
+Plătești o dată și rămâne frumos. Trimite dimensiunile → ofertă în 24h.</div>
+        <div class="foot"><div class="txt"><span class="site">genexcom.ro/overview</span><div class="headline">Lambriu la standard de fabrică, nu de improvizație</div><div class="desc">18 mm uniform, canturi teșite, de la producător.</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= NIRO STAHL ================= -->
+  <section id="niro">
+    <div class="sec-head">
+      <div class="client">Niro Stahl Impex · Hațeg, Hunedoara <span class="site-tag">site realizat de mine</span></div>
+      <h2>Utilaje forestiere: reclame care spun cui i se potrivește utilajul, nu doar ce specificații are</h2>
+      <p>Importator de utilaje forestiere și agricole din 2010. Cumpărătorul de despicător sau de linie de tăiat nu are nevoie de un catalog, are nevoie să știe dacă modelul i se potrivește la volumul și diametrul cu care lucrează. Cele opt reclame de mai jos au rulat în contul Meta al clientului în iulie și august 2026, cu textul și imaginile de aici.</p>
+    </div>
+
+    <div class="ads">
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">14 iul. 2026</span></div>
+        <div class="body">Ai tractor de 40–100 CP cu PTO 540? Atunci ai deja sursa de putere ca să treci de la munca manuală la un flux mecanizat.
+
+XYLOG 410 se prinde în trei puncte, merge pe PTO 540 și face amândouă operațiile — taie cu circular Ø1000 mm cu dinți din carbură (merge și pe lemn uscat, tare) și despică cu 16 T, cu AUTOSPEED care adaptează automat puterea la rezistența lemnului.
+
+Lungimi comerciale 200–500 mm, pene interschimbabile 2/4/6/8, pliabil pentru transport între locații.
+
+Familia are 4 niveluri — intri exact la bugetul potrivit, iar dacă lemnul tău cere mai mult, îți spunem direct.
+
+Finanțare prin credit sau leasing, vizionare la Hațeg. Trimite-ne tractorul și diametrele — primești recomandarea și oferta.</div>
+        <img class="pic" src="img/niro_xylog.jpg" alt="Procesor de lemn XYLOG 410 în lucru, prins pe tractor">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">Ai tractor? Ai procesor.</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">14 iul. 2026</span></div>
+        <div class="body">O linie de tăiat și despicat nouă vine la comandă din fabrică. Adică peste luni. Sezonul tău nu așteaptă atât.
+
+CS 420 Pro e disponibilă acum: an 2019, 4690 de ore de lucru — publicate transparent, nu ascunse. Taie până la 42 cm diametru, despică cu 18 tone, încarcă pe bandă telescopică de 5 m, totul din joystick.
+
+Verificată de noi înainte de recomandare. Factură de importator, service și piese asigurate, vizionare la Hațeg. Nu un anunț de la un necunoscut.
+
+E un singur exemplar și stocul de utilaje rulate se schimbă des. Disponibilitatea, starea și prețul se confirmă la ofertă.</div>
+        <img class="pic tall" src="img/niro_cs420_v1.jpg" alt="Contorul de ore al liniei CS 420 Pro, fotografiat pe utilaj">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">Disponibilă acum, nu peste luni</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">18 iul. 2026</span></div>
+        <div class="body">Trei operațiuni — tăiat, despicat, încărcat — într-un singur utilaj, comandat din joystick de un singur om.
+
+CS 420 Pro e disponibilă acum: an 2019, 4690 de ore de lucru — publicate transparent, nu ascunse. Taie până la 42 cm diametru, despică cu 18 tone, încarcă pe bandă telescopică de 5 m.
+
+Verificată de noi înainte de recomandare. Factură de importator, service și piese asigurate, vizionare la Hațeg.
+
+E un singur exemplar și stocul de utilaje rulate se schimbă des. Disponibilitatea, starea și prețul se confirmă la ofertă.</div>
+        <img class="pic" src="img/niro_cs420.jpg" alt="Linia de tăiat și despicat CS 420 Pro în curtea Niro Stahl">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">Disponibilă acum, nu peste câteva luni</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">14 iul. 2026</span></div>
+        <div class="body">Înainte să întrebi de preț, răspunde la trei întrebări:
+
+1. Ai trifazic 400 V la punctul de lucru?
+2. Buștenii tăi sunt între 10 și 45 cm?
+3. Produci constant — nu doar pentru tine, iarna?
+
+Dacă ai trei de DA, Amix LP-450SP merită o discuție: tăiere cu circular Ø1100 și despicare 22 T în 2–16 părți fără schimb de cuțit, într-un singur flux electric, cu lemnul ieșind pe conveyor. Dacă ai un NU — ți-o spunem direct și îți recomandăm altceva din gamă. Un utilaj de 6,5 metri cumpărat greșit e o greșeală pe care n-o repari ieftin.
+
+Importăm utilaje forestiere din 2010. Service &amp; piese, finanțare credit/leasing, vizionare la Hațeg. Spune-ne diametrele, lungimile și volumul pe zi — primești o recomandare, nu un pliant.</div>
+        <img class="pic wide" src="img/niro_lp450_3intrebari.jpg" alt="Linia Amix LP-450SP cu conveyor">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">3 întrebări înainte de ofertă</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">21 aug. 2026</span></div>
+        <div class="body">Știi bușteanul ăla de fag cu nod, în care despicătorul se oprește și scârțâie? Cel pe care-l dai deoparte „pentru mai târziu"?
+
+Pentru el există CV22: 21 de tone de forță, direct de la priza de putere a tractorului tău (PTO 540). Despică vertical, bușteanul stă jos, nu-l ridici și trece prin esență tare acolo unde un despicător de gospodărie cedează. Cu rampă extensie și pană în 4 bucăți.
+
+Ai tractor cu PTO 540? Atunci ai deja motorul; îți lipsește doar unealta.
+
+Utilaj rulat, verificat de noi, cu factură de importator și vizionare la Hațeg. Disponibilitatea, starea și prețul se confirmă la ofertă.</div>
+        <img class="pic tall" src="img/niro_cv22.jpg" alt="Despicător vertical CV22, 21 tone">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">21 t pentru lemnul care blochează</div></div><button class="btn" type="button">Vezi detalii</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">21 aug. 2026</span></div>
+        <div class="body">În fiecare grămadă există bușteanul ăla: stejar sau fag bătrân, gros, cu noduri, pe care l-ai ocolit de trei ori pentru că știi că despicătorul se blochează în el.
+
+CV26 e construit pentru el: 25 de tone de forță, maximul din seria verticală, direct de la priza de putere a tractorului tău (PTO 540). Despică pe verticală, deci bușteanul greu rămâne jos nu-l ridici tu. Cu rampă extensie și pană în 4 bucăți.
+
+Ce despică greu la alții, la 25 de tone trece.
+
+Utilaj rulat, verificat de noi înainte de recomandare, cu factură de importator și vizionare la Hațeg. Disponibilitatea, starea și prețul se confirmă la ofertă.</div>
+        <img class="pic tall" src="img/niro_cv26.jpg" alt="Despicător vertical CV26, 25 tone">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">25 t pentru bușteanul imposibil</div></div><button class="btn" type="button">Vezi detalii</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">12 aug. 2026</span></div>
+        <div class="body">Fă un calcul simplu: fiecare kilogram de graifer e un kilogram de lemn pe care macaraua ta nu-l mai ridică. La zeci de curse pe zi, un graifer greu te costă în fiecare zi.
+
+GR 35 cântărește 204 kg și încarcă până la 6000 kg. Deschidere de 1750 mm și prindere de la 75 mm diametru: merge și pe bușteni, și pe material subțire, mixt.
+
+Pentru macarale medii, graiferul „cel mai mare" e o greșeală cel corect e cel care îți lasă sarcina utilă pentru marfă. Ce macara ai? Tipul de prindere îl confirmăm noi, înainte de plată.
+
+Utilaj rulat, verificat de noi, cu factură de importator și vizionare la Hațeg. Disponibilitatea, starea și prețul se confirmă la ofertă.</div>
+        <img class="pic tall" src="img/niro_gr35.jpg" alt="Graifer forestier GR 35">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">204 kg graifer, 6000 kg sarcină</div></div><button class="btn" type="button">Vezi detalii</button></div>
+      </article>
+
+      <article class="ad">
+        <div class="head"><div class="logo">N</div><div class="who"><b>Niro Stahl</b><span>Sponsorizat</span></div><span class="date">12 aug. 2026</span></div>
+        <div class="body">Fiecare cursă în care graiferul prinde puțin e timp pierdut. Fiecare zi cu graiferul defect e un camion care stă.
+
+GR 43 rezolvă ambele: deschidere de 2050 mm, deci prinde bușteni groși și pachete voluminoase dintr-o mișcare, și capacitate de 7000 kg la o greutate proprie de doar 230 kg. Sarcina utilă a macaralei rămâne pentru lemn, nu pentru graifer.
+
+Ce macara ai? Există diferite tipuri de prindere, îți confirmăm compatibilitatea cu rotatorul și macaraua ta înainte să plătești.
+
+Utilaj rulat, verificat de noi înainte de recomandare, cu factură de importator și vizionare la Hațeg. Disponibilitatea, starea și prețul se confirmă la ofertă.</div>
+        <img class="pic tall" src="img/niro_gr43.jpg" alt="Graifer forestier GR 43">
+        <div class="foot"><div class="txt"><span class="site">nirostahl.ro</span><div class="headline">Prinde mai mult dintr-o mișcare</div></div><button class="btn" type="button">Vezi detalii</button></div>
+      </article>
+    </div>
+
+    <div class="sub-head"><h3>Pagina principală, regândită în jurul unei singure temeri</h3></div>
+    <p class="note">Site-ul vechi funcționa ca un catalog. Problema reală a cumpărătorului de utilaj scump nu e „ce modele aveți", e „cum aleg pe cel potrivit fără să greșesc o investiție mare". Pagina nouă pornește de acolo.</p>
+    <div class="samples">
+      <div class="sample"><span class="label">Poziționare</span><p>Niro Stahl nu vinde doar utilaje. Te ajută să nu cumperi utilajul greșit.</p></div>
+      <div class="sample"><span class="label">Titlu principal</span><p>Te ajutăm să nu cumperi utilajul greșit.</p></div>
+      <div class="sample"><span class="label">Secțiunea de problemă</span><p>O linie prea mică te blochează. Una prea mare îți blochează banii.</p></div>
+      <div class="sample"><span class="label">Structura paginii</span><p class="small">Recomandare înainte de ofertă, nu catalog. Un buton principal și unul secundar, pe tip de cumpărător: cine știe ce vrea cere oferta, cine nu știe trimite diametrele și volumul.</p></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>10.466</b><span>afișări de pagină, iun.–aug. 2026</span></div>
+      <div class="stat"><b>8.042</b><span>utilizatori activi, aceeași perioadă</span></div>
+    </div>
+  </section>
+
+  <!-- ================= RICE DEALER ================= -->
+  <section id="rice-dealer">
+    <div class="sec-head">
+      <div class="client">The Rice Dealer · sirop de cafea fără calorii</div>
+      <h2>Calculul pe care cumpărătorul nu și-l face singur</h2>
+      <p>Cumpărătorul de sirop de cafea nu se gândește la el ca la o cafenea la el acasă. Reclama face socoteala în locul lui: cât costă aceeași cafea afară, de câte ori pe săptămână, și ce înseamnă asta pe o lună.</p>
+    </div>
+    <div class="ads">
+      <article class="ad text-only">
+        <div class="head"><div class="logo">R</div><div class="who"><b>The Rice Dealer</b><span>Sponsorizat</span></div></div>
+        <div class="body">Iced Vanilla Latte la Starbucks, 22 de lei. Pe zi. Înmulțit cu 5 zile pe săptămână.
+
+Sticla asta de Vanilla Barista Syrup costă cât 4 cafele și ține o lună. Pui o doză peste cafea, apoi lapte, apoi gheață. Iced Vanilla Latte acasă, în 90 de secunde, fără drum, fără coadă.
+
+Zero zahăr. Zero calorii. Aroma e exact aia pe care o știi.</div>
+        <div class="foot"><div class="txt"><span class="site">thericedealer.ro</span><div class="headline">Iced Vanilla Latte acasă. Mai ieftin de 4 ori.</div></div><button class="btn" type="button">Cumpără</button></div>
+      </article>
+      <div class="sample">
+        <span class="label">Alte două deschideri testate</span>
+        <p>„Mai ieftin decât 4 cafele de la Starbucks."</p>
+        <p>„Stop la 22 de lei dimineața pentru o cafea."</p>
+        <p class="small">Trei concepte pe același produs, fiecare cu alt prim rând. Primul rând e tot ce se vede pe telefon înainte de „vezi mai mult", așa că acolo se câștigă sau se pierde clickul.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= IDEALIST ================= -->
+  <section id="idealist">
+    <div class="sec-head">
+      <div class="client">Idealist Shop · magazin online, Augsburg, Germania <span class="site-tag">site realizat de mine</span></div>
+      <h2>Un program de afiliere Awin scris de la zero, în germană</h2>
+      <p>Magazinul (produse pentru bebeluși și familie, livrare în Germania, Austria și Elveția) voia parteneri care să le recomande produsele, nu cupoane și cashback care mănâncă marja fără să aducă clienți noi. Poziționarea programului e scrisă direct în germană, limba în care Awin și partenerii citesc profilul.</p>
+    </div>
+    <div class="samples">
+      <div class="sample">
+        <span class="label">Poziționarea programului, în germană</span>
+        <p class="small">„Idealist Shop ist ein Onlineshop aus Augsburg mit rund 75 Produkten für Baby und Familie, zum Beispiel Kinderwagen, Babytragen, Wickelrucksäcke und Hochstühle. Wir liefern nach Deutschland, Österreich und in die Schweiz. Mit dem Partnerprogramm möchten wir mit Elternblogs, Ratgeberseiten, Vergleichsportalen und Content Creatorn rund um Schwangerschaft und Baby zusammenarbeiten, die unsere Produkte ihren Lesern empfehlen. Die Vergütung erfolgt ausschließlich über Provisionen auf bestätigte Verkäufe, gestaffelt nach Warenwert."</p>
+      </div>
+      <div class="sample">
+        <span class="label">Ce am reparat în cont</span>
+        <p class="small">Comisionul se calcula inclusiv pe TVA și pe transport, adică magazinul plătea partenerii și din bani care nu erau de fapt vânzare. Acum comisionul se calculează doar pe valoarea produsului.</p>
+        <p class="small">Cupoanele, cashback-ul și retargetarea sunt blocate din program. Rămân bloggerii, comparatoarele și creatorii de conținut, adică partenerii care aduc clienți noi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOLZE ================= -->
+  <section id="holze">
+    <div class="sec-head">
+      <div class="client">Mostră · Holze, ferestre din lemn stratificat</div>
+      <h2>Cum ar arăta o reclamă pentru Holze</h2>
+      <p>Am citit pagina gamei Unique de pe holze.ro, nu doar imaginile. De acolo vin cele două concepte: unul pe vitralii pe comandă, unul pe ferestrele cu arcadă pentru case neoromânești și brâncovenești. Fiecare cifră din text e luată de pe site, nu dintr-un șablon general de reclamă pentru tâmplărie.</p>
+    </div>
+    <div class="ads">
+      <article class="ad">
+        <div class="head"><div class="logo">H</div><div class="who"><b>Holze</b><span>Reclamă sponsorizată</span></div></div>
+        <div class="body">Ferestrele obișnuite se opresc la geamul tripan. Gama Unique merge mai departe, cu vitralii făcute pe comandă, pentru case, vile și conace unde tâmplăria chiar contează.</div>
+        <img class="pic" src="img/holze_unique.jpg" alt="Fereastră din lemn stratificat cu vitraliu, gama Holze Unique">
+        <div class="foot"><div class="txt"><span class="site">holze.ro</span><div class="headline">Ferestre cu vitraliu pe comandă</div></div><button class="btn" type="button">Cere ofertă</button></div>
+      </article>
+      <article class="ad text-only">
+        <div class="head"><div class="logo">H</div><div class="who"><b>Holze</b><span>Reclamă sponsorizată</span></div></div>
+        <div class="body">Casa are arcadă la ferestre și niciun profil de PVC nu se potrivește pe ea.
+
+Aici intervine lemnul stratificat.
+
+Holze face ferestrele din lemn stratificat de meranti, cu tratament și finisaje rezistente la razele UV. Au plase de insecte incorporate. Au și obloane din lemn integrate.
+
+Rama are profil de 78 mm. Pe ea se montează geam tripan, până la 46 mm grosime. La cerere se montează și sticlă securizată, în configurația 442 16 4 16 4, care rezistă mai bine la efracții.
+
+Gama Unique se lucrează pe comandă.
+
+Se lucrează din eucalipt, meranti, larice, pin nordic sau stejar. Arcada și vitraliile se fac personalizat, după planul dumneavoastră.
+
+Trimiteți tabloul de tâmplărie de la arhitect sau planul fațadelor.
+
+Primiți o ofertă de preț pe baza lor.</div>
+        <div class="foot"><div class="txt"><span class="site">holze.ro</span><div class="headline">Ferestre cu arcadă, lemn stratificat</div><div class="desc">Profil 78 mm, geam tripan până la 46 mm. Producător Holze.</div></div><button class="btn" type="button">Cereți ofertă</button></div>
+      </article>
+    </div>
+    <div class="angles">
+      <span class="angle">Fapt: profil de 78 mm, geam tripan până la 46 mm</span>
+      <span class="angle">Fapt: sticlă securizată anti-efracție, configurație 442 16 4 16 4, la cerere</span>
+      <span class="angle">Fapt: 5 esențe de lemn, eucalipt, meranti, larice, pin nordic, stejar</span>
+      <span class="angle">CTA după ce cere Holze la ofertare: tabloul de tâmplărie de la arhitect</span>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICĂRI ================= -->
+  <section id="certificari">
+    <div class="sec-head">
+      <div class="client">Certificări</div>
+      <h2>Google Skillshop și Anthropic, pe numele Eduard Urzică</h2>
+      <p>Patru certificări Google, fiecare cu numărul de identificare cu care se poate verifica în Skillshop, și două certificate Anthropic pentru lucrul cu modelele Claude.</p>
+    </div>
+    <div class="certs-google">
+      <div class="cert">
+        <img src="img/google-ads-search.png" alt="Insignă Google Ads Search Certified" width="500" height="500">
+        <span class="cname">Google Ads Search</span>
+        <span class="meta">Emis 15 apr. 2026 · valabil până la 15 apr. 2027<br>ID <code>179882465</code></span>
+      </div>
+      <div class="cert">
+        <img src="img/google-ads-display.png" alt="Insignă Google Ads Display Certified" width="500" height="500">
+        <span class="cname">Google Ads Display</span>
+        <span class="meta">Emis 16 apr. 2026 · valabil până la 16 apr. 2027<br>ID <code>180000599</code></span>
+      </div>
+      <div class="cert">
+        <img src="img/google-analytics.png" alt="Insignă Google Analytics Certified" width="500" height="500">
+        <span class="cname">Google Analytics</span>
+        <span class="meta">Emis 17 apr. 2026 · valabil până la 17 apr. 2027<br>ID <code>180074979</code></span>
+      </div>
+      <div class="cert">
+        <img src="img/grow-offline-sales.png" alt="Insignă Grow Offline Sales Certified" width="500" height="500">
+        <span class="cname">Grow Offline Sales</span>
+        <span class="meta">Emis 21 apr. 2026 · valabil până la 21 apr. 2027<br>ID <code>180315308</code></span>
+      </div>
+    </div>
+    <div class="certs-anthropic">
+      <figure class="diploma" style="margin:0">
+        <img src="img/anthropic-ai-fluency.jpg" alt="Certificat Anthropic: AI Fluency: Framework &amp; Foundations, Eduard Urzica" width="2000" height="1545">
+        <figcaption class="cap"><b>AI Fluency: Framework &amp; Foundations</b><span>Anthropic · certificat de absolvire</span></figcaption>
+      </figure>
+      <figure class="diploma" style="margin:0">
+        <img src="img/anthropic-claude101.jpg" alt="Certificat Anthropic: Claude 101, Eduard Urzica" width="2000" height="1545">
+        <figcaption class="cap"><b>Claude 101</b><span>Anthropic · certificat de absolvire</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    <span class="eyebrow">Contact</span>
+    <h2>Asta pot să fac și pentru voi.</h2>
+    <p class="lede">Fiecare text de mai sus a pornit de la o observație concretă despre firmă sau despre reclamele ei, nu de la un șablon. Dacă vreți să vedeți cum arată asta pentru produsele voastre, spuneți-mi și vă scriu o mostră.</p>
+    <div class="contact">
+      <b>Eduard Urzică</b>
+      <span>Urzică Eduard PFA · CUI <strong>53983211</strong></span>
+      <span>Telefon <strong>0749 675 066</strong></span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
